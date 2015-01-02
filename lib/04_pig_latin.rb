@@ -3,7 +3,7 @@
 
 Vowels = ['a','e','i','o', 'u']
 
-def translate_word(word)
+def translate_word(word)    
     if Vowels.include?(word[0])
         return word + 'ay'
     else
@@ -28,10 +28,22 @@ def translate_word(word)
     end
 end
 
+def capitalized?(word)
+    if word[0] == word[0].upcase
+        true    
+    else
+        false
+    end
+end
+
 def translate(string)
     words = []
     string.split(' ').each do |word|
-        words << translate_word(word)
+        if capitalized?(word)
+            words << translate_word(word).capitalize
+        else
+            words << translate_word(word)
+        end
     end
     return words.join(' ')
 end
