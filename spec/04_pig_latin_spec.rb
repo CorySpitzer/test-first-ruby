@@ -79,8 +79,8 @@ describe "#translate" do
   end
   
   it "retains punctuation" do
-    s = translate("why, hello there!")
-    s.should == "ywhay, ellohay erethay!"
+    s = translate("hello there, fox!")
+    s.should == "ellohay erethay, oxfay!"
   end
 
 end
